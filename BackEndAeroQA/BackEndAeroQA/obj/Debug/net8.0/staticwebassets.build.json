@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "w2xkHcp42bQgMP/CTIDwKeqTx4tFCLOcmR5dgoQpuoE=",
+  "Source": "BackEndAeroQA.WebAPI",
+  "BasePath": "_content/BackEndAeroQA.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,17 @@
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.deps.json
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.runtimeconfig.json
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Domain.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\bin\Debug\net8.0\BackEndAeroQA.Domain.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.csproj.AssemblyReference.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.AssemblyInfoInputs.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.AssemblyInfo.cs
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.csproj.CopyComplete
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\refint\BackEndAeroQA.Infrastructure.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\BackEndAeroQA.Infrastructure.genruntimeconfig.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Infrastructure\obj\Debug\net8.0\ref\BackEndAeroQA.Infrastructure.dll

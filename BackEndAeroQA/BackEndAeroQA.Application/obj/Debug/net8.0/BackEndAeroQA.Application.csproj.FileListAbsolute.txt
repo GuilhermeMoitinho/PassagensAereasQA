@@ -1,0 +1,17 @@
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.csproj.AssemblyReference.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.AssemblyInfoInputs.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.AssemblyInfo.cs
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.csproj.CoreCompileInputs.cache
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Application.deps.json
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Application.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Application.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Domain.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Domain.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\bin\Debug\net8.0\BackEndAeroQA.Infrastructure.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.csproj.CopyComplete
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\refint\BackEndAeroQA.Application.dll
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\BackEndAeroQA.Application.pdb
+C:\OlaMeuNomeEGuilherme\BackEndAeroQA\BackEndAeroQA.Application\obj\Debug\net8.0\ref\BackEndAeroQA.Application.dll
