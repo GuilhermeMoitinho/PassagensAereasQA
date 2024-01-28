@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj": {}
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj": {
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj",
+        "projectUniqueName": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj",
         "projectName": "BackEndAeroQA.Application",
-        "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj",
-        "packagesPath": "C:\\Users\\emanc\\.nuget\\packages\\",
-        "outputPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\obj\\",
+        "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme Moitinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
-                "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj"
+              "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
+                "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj"
               },
-              "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
-                "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj"
+              "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
+                "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj"
               }
             }
           }
@@ -80,17 +84,21 @@
         }
       }
     },
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
+        "projectUniqueName": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
         "projectName": "BackEndAeroQA.Domain",
-        "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
-        "packagesPath": "C:\\Users\\emanc\\.nuget\\packages\\",
-        "outputPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\obj\\",
+        "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme Moitinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -135,17 +143,21 @@
         }
       }
     },
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj",
         "projectName": "BackEndAeroQA.Infrastructure",
-        "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\emanc\\.nuget\\packages\\",
-        "outputPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\obj\\",
+        "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme Moitinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -159,8 +171,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
-                "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj"
+              "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
+                "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj"
               }
             }
           }
@@ -206,17 +218,21 @@
         }
       }
     },
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj": {
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj",
+        "projectUniqueName": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj",
         "projectName": "BackEndAeroQA.WebAPI",
-        "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\emanc\\.nuget\\packages\\",
-        "outputPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA\\obj\\",
+        "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme Moitinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -230,11 +246,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj": {
-                "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj"
+              "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj": {
+                "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj"
               },
-              "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
-                "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj"
+              "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj": {
+                "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Infrastructure\\BackEndAeroQA.Infrastructure.csproj"
               }
             }
           }

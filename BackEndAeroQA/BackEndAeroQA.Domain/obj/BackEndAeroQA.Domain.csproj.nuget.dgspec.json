@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {}
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {}
   },
   "projects": {
-    "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
+    "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
+        "projectUniqueName": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
         "projectName": "BackEndAeroQA.Domain",
-        "projectPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
-        "packagesPath": "C:\\Users\\emanc\\.nuget\\packages\\",
-        "outputPath": "C:\\OlaMeuNomeEGuilherme\\BackEndAeroQA\\BackEndAeroQA.Domain\\obj\\",
+        "projectPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\BackEndAeroQA.Domain.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\emanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme Moitinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
