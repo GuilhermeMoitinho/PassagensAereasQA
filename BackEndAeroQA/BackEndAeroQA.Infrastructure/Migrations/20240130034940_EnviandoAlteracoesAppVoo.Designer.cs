@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEndAeroQA.Infrastructure.Migrations
 {
     [DbContext(typeof(DbContextVoo))]
-    [Migration("20240127224316_DbContextVooMigra")]
-    partial class DbContextVooMigra
+    [Migration("20240130034940_EnviandoAlteracoesAppVoo")]
+    partial class EnviandoAlteracoesAppVoo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,10 @@ namespace BackEndAeroQA.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Origem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Passageiros")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

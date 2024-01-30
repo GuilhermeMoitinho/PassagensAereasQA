@@ -1,14 +1,16 @@
-﻿using BackEndAeroQA.Domain.Enum;
+﻿using BackEndAeroQA.Domain.Entity;
+using BackEndAeroQA.Domain.Enum;
+using System.Globalization;
 
-public class Voo
+public class Voo : baseEntity
 {
-    public Guid Id { get; set; }
     public string Origem { get; set; }
     public string Destino { get; set; }
-    public DateTime DataHoraDePartida { get; set; }
-    public DateTime DataHoraDeChegada { get; set; }
+    public DateTime DataHoraDePartida { get; set; } = DateTime.ParseExact("2016-05-08", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+    public DateTime DataHoraDeChegada { get; set; } = DateTime.ParseExact("2016-05-08", "yyyy-MM-dd", CultureInfo.InvariantCulture);
     public TipoDeClasses Tipo { get; set; }
     public int QuantidadeDosAssentos { get; set; }
+    public List<string> Passageiros { get; set; }
     public double ValorDoAssento { get; set; }
 
     public Voo()

@@ -21,3 +21,4 @@ D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA.Domain\obj\
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA.Domain\obj\Debug\net8.0\refint\BackEndAeroQA.Domain.dll
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA.Domain\obj\Debug\net8.0\BackEndAeroQA.Domain.pdb
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA.Domain\obj\Debug\net8.0\ref\BackEndAeroQA.Domain.dll
+D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA.Domain\obj\Debug\net8.0\BackEndAeroQA.Domain.csproj.AssemblyReference.cache

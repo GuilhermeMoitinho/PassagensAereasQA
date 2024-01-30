@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BackEndAeroQA.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class DbContextVooMigra : Migration
+    public partial class EnviandoAlteracoesAppVoo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,7 @@ namespace BackEndAeroQA.Infrastructure.Migrations
                     DataHoraDeChegada = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Tipo = table.Column<int>(type: "int", nullable: false),
                     QuantidadeDosAssentos = table.Column<int>(type: "int", nullable: false),
+                    Passageiros = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ValorDoAssento = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>

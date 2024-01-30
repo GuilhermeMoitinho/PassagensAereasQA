@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEndAeroQA.Infrastructure.Migrations.DbContextAeroportoMigrations
 {
     [DbContext(typeof(DbContextAeroporto))]
-    [Migration("20240128212854_AppDbContextAeroportoVooMigration")]
-    partial class AppDbContextAeroportoVooMigration
+    [Migration("20240130034451_EnviandoAlteracoesAppAeroporto")]
+    partial class EnviandoAlteracoesAppAeroporto
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,35 +49,35 @@ namespace BackEndAeroQA.Infrastructure.Migrations.DbContextAeroportoMigrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d253f61f-9fec-407e-b5e6-16736f94a1e3"),
+                            Id = new Guid("d886b1e9-51fd-476b-8dae-71a524729e55"),
                             Cidade = "Rio de Janeiro",
                             Codigo = 1000,
                             UF = "RJ"
                         },
                         new
                         {
-                            Id = new Guid("87a599dd-e48d-4f4f-a084-9586ecf561dc"),
+                            Id = new Guid("59ae45a3-ab8a-4da6-8843-e1815c2b089b"),
                             Cidade = "São Paulo",
                             Codigo = 1001,
                             UF = "SP"
                         },
                         new
                         {
-                            Id = new Guid("f0a093a8-3f33-49b2-9618-dbbb0e7352a6"),
+                            Id = new Guid("6300b85d-66ae-4ee4-8ae0-231ae025903d"),
                             Cidade = "Belo Horizonte",
                             Codigo = 1002,
                             UF = "MG"
                         },
                         new
                         {
-                            Id = new Guid("cbc1f3cf-b130-4c41-9bc0-7b1651012aa9"),
+                            Id = new Guid("418029f8-4757-45df-ac43-edd9f655a81c"),
                             Cidade = "Brasília",
                             Codigo = 1003,
                             UF = "DF"
                         },
                         new
                         {
-                            Id = new Guid("5f8efbaf-ae44-4664-b266-b237f2073e5f"),
+                            Id = new Guid("afc80cc6-af3f-4847-ad2a-23a71881504f"),
                             Cidade = "Salvador",
                             Codigo = 1004,
                             UF = "BA"

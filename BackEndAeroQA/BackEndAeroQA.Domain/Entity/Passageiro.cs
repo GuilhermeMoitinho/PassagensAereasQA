@@ -1,4 +1,8 @@
-﻿namespace BackEndAeroQA.Domain.Entity
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+namespace BackEndAeroQA.Domain.Entity
 {
     public class Passageiro
     {

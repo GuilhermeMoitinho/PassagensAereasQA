@@ -1,4 +1,5 @@
 using BackEndAeroQA.Application.Auth;
+using BackEndAeroQA.Application.Interfaces;
 using BackEndAeroQA.Application.Services;
 using BackEndAeroQA.Applicaton.Interfaces;
 using BackEndAeroQA.Infrastructure.Context;
@@ -22,6 +23,8 @@ builder.Services.AddDbContext<DbContextVoo>
         (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
 builder.Services.AddScoped<IVooService, VooService>();
+builder.Services.AddScoped<IAeroportoService, AeroportoService>();
+builder.Services.AddScoped<IPassageiroService, PassageiroService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

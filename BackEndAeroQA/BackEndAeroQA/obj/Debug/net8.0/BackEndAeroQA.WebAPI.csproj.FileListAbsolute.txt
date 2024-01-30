@@ -425,3 +425,4 @@ D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\obj\Debug\n
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\obj\Debug\net8.0\BackEndAeroQA.WebAPI.pdb
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\obj\Debug\net8.0\BackEndAeroQA.WebAPI.genruntimeconfig.cache
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\obj\Debug\net8.0\ref\BackEndAeroQA.WebAPI.dll
+D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\Newtonsoft.Json.dll

@@ -8,29 +8,33 @@ namespace BackEndAeroQA.Application.Services
 {
     public class VooService : IVooService
     {
-        private readonly DbContextAeroporto _contextAeroporto;
         private readonly DbContextVoo _contextVoo;
+        private readonly AppDbContext _passageiroContext;
 
-        public VooService(DbContextAeroporto contextAeroporto, DbContextVoo contextVoo)
+        public VooService(DbContextVoo contextVoo, AppDbContext passageiroContext)
         {
-            _contextAeroporto = contextAeroporto;
             _contextVoo = contextVoo;
+            _passageiroContext = passageiroContext;
         }
 
         public async Task AlterarVoo(Voo voor)
         {
-            var vooExistente = _contextVoo.Voos.FirstOrDefault(v => v.Id == voor.Id);
+            var vooExistente = _contextVoo.Voos.AsNoTracking().FirstOrDefault(v => v.Id == voor.Id);
 
-            vooExistente.Origem = voor.Origem;
-            vooExistente.Destino = voor.Destino;
-            vooExistente.DataHoraDePartida = voor.DataHoraDePartida;
-            vooExistente.DataHoraDeChegada = voor.DataHoraDeChegada;
-            vooExistente.Tipo = voor.Tipo;
-            vooExistente.QuantidadeDosAssentos = voor.QuantidadeDosAssentos;
-            vooExistente.ValorDoAssento = voor.ValorDoAssento;
+            if (vooExistente != null)
+            {
+                vooExistente.Origem = voor.Origem;
+                vooExistente.Destino = voor.Destino;
+                vooExistente.DataHoraDePartida = voor.DataHoraDePartida;
+                vooExistente.DataHoraDeChegada = voor.DataHoraDeChegada;
+                vooExistente.Tipo = voor.Tipo;
+                vooExistente.QuantidadeDosAssentos = voor.QuantidadeDosAssentos;
+                vooExistente.Passageiros = voor.Passageiros;
+                vooExistente.ValorDoAssento = voor.ValorDoAssento;
 
-             _contextVoo.Voos.Update(vooExistente);
-            await _contextVoo.SaveChangesAsync();
+                _contextVoo.Voos.Update(vooExistente);
+                await _contextVoo.SaveChangesAsync();
+            }
         }
 
         public async Task<ServiceResponseCompraDoVoo<Voo>> BuscarVoo(Guid id)
@@ -49,10 +53,25 @@ namespace BackEndAeroQA.Application.Services
 
         public async Task<ServiceResponseCompraDoVoo<Voo>> CadastrarVoos(Voo voos)
         {
+            var response = new ServiceResponseCompraDoVoo<Voo>();
+
+            if (voos is null)
+            {
+                response = new ServiceResponseCompraDoVoo<Voo>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Verifique suas credenciais!"
+                };
+
+                return response;
+            }
+
+
             await _contextVoo.Voos.AddAsync(voos);
             await _contextVoo.SaveChangesAsync();
 
-            var response = new ServiceResponseCompraDoVoo<Voo>
+            response = new ServiceResponseCompraDoVoo<Voo>
             {
                 ProcessoConcluido = true,
                 Dados = voos.Id,
@@ -66,20 +85,37 @@ namespace BackEndAeroQA.Application.Services
         public async Task CancelarVoo(Guid id)
         {
             var vooParaRemover = await _contextVoo.Voos.FirstOrDefaultAsync(v => v.Id == id);
-
+            
             _contextVoo.Voos.Remove(vooParaRemover);
             await _contextVoo.SaveChangesAsync();
         }
 
-        public async Task<ServiceResponseCompraDoVoo<Aeroporto>> ListarAeroportos()
-        {
-            var TodosOsAeroportos = await _contextAeroporto.Aeroportos.ToListAsync();
 
-            var response = new ServiceResponseCompraDoVoo<Aeroporto>
+        public async Task<ServiceResponseCompraDoVoo<Voo>> ListarPassageirosEmVooEspecifico(Guid id)
+        {
+            var response = new ServiceResponseCompraDoVoo<Voo>();
+
+            var VooEspecifico = await _contextVoo.Voos.FirstOrDefaultAsync(ps => ps.Id == id);
+
+            var TodosOsPassageiros = VooEspecifico.Passageiros.ToList();
+
+            if (id == Guid.Empty)
+            {
+                response = new ServiceResponseCompraDoVoo<Voo>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Verifique suas credenciais!"
+                };
+
+                return response;
+            }
+
+            response = new ServiceResponseCompraDoVoo<Voo>
             {
                 ProcessoConcluido = true,
-                Dados = TodosOsAeroportos,
-                Mensagem = "Tudo certo!"
+                Dados = TodosOsPassageiros,
+                Mensagem = "Aqui está seus passageiros!"
             };
 
             return response;
@@ -87,15 +123,65 @@ namespace BackEndAeroQA.Application.Services
 
         public async Task<ServiceResponseCompraDoVoo<Voo>> ListarVoos(int peginaNumeros, int quantNumeros)
         {
+            var response = new ServiceResponseCompraDoVoo<Voo>();
+
             var TodosOsVoos = await _contextVoo.Voos.Skip(peginaNumeros * quantNumeros).Take(quantNumeros).ToListAsync();
 
+            if(TodosOsVoos is null)
+            {
+                response = new ServiceResponseCompraDoVoo<Voo>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Você não tem voos disponiveis!"
+                };
 
-            var response = new ServiceResponseCompraDoVoo<Voo>
+                return response;
+            }
+
+
+             response = new ServiceResponseCompraDoVoo<Voo>
             {
                 ProcessoConcluido = true,
                 Dados = TodosOsVoos,
                 Mensagem = "Tudo certo!"
             };
+
+            return response;
+
+        }
+
+        public async Task<ServiceResponseCompraDoVoo<Voo>> ListarVoosEmDataEspecifica(DateTime DataPartidaa, DateTime DataChegada)
+        {
+
+            var response = new ServiceResponseCompraDoVoo<Voo>();
+
+                var DataPartidaEspecif = await _contextVoo.Voos.
+                FirstOrDefaultAsync
+                (DataPartidaExistente => DataPartidaExistente.DataHoraDePartida == DataPartidaa 
+                && DataPartidaExistente.DataHoraDeChegada == DataChegada);
+
+
+
+            if (DataPartidaEspecif == null)
+            {
+                response = new ServiceResponseCompraDoVoo<Voo>
+                {
+                    ProcessoConcluido = true,
+                    Dados = DataPartidaEspecif,
+                    Mensagem = "Seus voos não estão disponiveis!"
+                };
+
+                return response;
+            }
+
+            response = new ServiceResponseCompraDoVoo<Voo>
+            {
+                ProcessoConcluido = true,
+                Dados = DataPartidaEspecif,
+                Mensagem = "Seus voos disponiveis!"
+            };
+
 
             return response;
 

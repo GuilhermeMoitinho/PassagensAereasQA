@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BackEndAeroQA.Infrastructure.Migrations.DbContextAeroportoMigrations
 {
     /// <inheritdoc />
-    public partial class AeroportoMigration : Migration
+    public partial class EnviandoAlteracoesAppAeroporto : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,11 +32,11 @@ namespace BackEndAeroQA.Infrastructure.Migrations.DbContextAeroportoMigrations
                 columns: new[] { "Id", "Cidade", "Codigo", "UF" },
                 values: new object[,]
                 {
-                    { new Guid("229a2ac4-f562-4636-b261-8f4ef3f8d207"), "São Paulo", 1001, "SP" },
-                    { new Guid("5ceb7485-bca8-425b-a905-9ca834c93645"), "Salvador", 1004, "BA" },
-                    { new Guid("84195e0e-fb05-4eb6-9536-2d0dc97547ef"), "Belo Horizonte", 1002, "MG" },
-                    { new Guid("dc5c5e35-2186-42ad-90d6-208eb6546e18"), "Rio de Janeiro", 1000, "RJ" },
-                    { new Guid("fe622eb9-e637-499a-9ce7-c46b012e9c9e"), "Brasília", 1003, "DF" }
+                    { new Guid("418029f8-4757-45df-ac43-edd9f655a81c"), "Brasília", 1003, "DF" },
+                    { new Guid("59ae45a3-ab8a-4da6-8843-e1815c2b089b"), "São Paulo", 1001, "SP" },
+                    { new Guid("6300b85d-66ae-4ee4-8ae0-231ae025903d"), "Belo Horizonte", 1002, "MG" },
+                    { new Guid("afc80cc6-af3f-4847-ad2a-23a71881504f"), "Salvador", 1004, "BA" },
+                    { new Guid("d886b1e9-51fd-476b-8dae-71a524729e55"), "Rio de Janeiro", 1000, "RJ" }
                 });
         }
 
