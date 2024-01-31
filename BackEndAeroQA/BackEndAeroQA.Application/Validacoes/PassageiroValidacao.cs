@@ -1,9 +1,10 @@
-﻿using BackEndAeroQA.Domain.Entity;
+﻿using BackEndAeroQA.Application.Mapper.Mappings;
+using BackEndAeroQA.Domain.Entity;
 using FluentValidation;
 
 namespace BackEndAeroQA.Application.Validacoes
 {
-    public class PassageiroValidacao : AbstractValidator<Passageiro>
+    public class PassageiroValidacao : AbstractValidator<PassageiroDto>
     {
         public PassageiroValidacao()
         {
@@ -15,9 +16,14 @@ namespace BackEndAeroQA.Application.Validacoes
             RuleFor(p => p).Must(BeValid);
         }
 
-        private bool BeValid(Passageiro passageiro)
+        private bool BeValid(PassageiroDto passageiroDto)
         {
-            if (passageiro.Name.Equals("string") || passageiro.Cpf.Equals("string") || passageiro.Email.Equals("string"))
+            if (passageiroDto.Name.Equals("string") || passageiroDto.Cpf.Equals("string") || passageiroDto.Email.Equals("string"))
+            {
+                return false;
+            }
+
+            if(passageiroDto.Cpf.Length > 11)
             {
                 return false;
             }

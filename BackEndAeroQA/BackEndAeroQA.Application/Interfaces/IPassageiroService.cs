@@ -1,4 +1,5 @@
-﻿using BackEndAeroQA.Application.ServicoDeResposta;
+﻿using BackEndAeroQA.Application.Mapper.Mappings;
+using BackEndAeroQA.Application.ServicoDeResposta;
 using BackEndAeroQA.Domain.Entity;
 using BackEndAeroQA.Domain.Enum;
 
@@ -8,7 +9,7 @@ namespace BackEndAeroQA.Application.Interfaces
     {
         Task<ServiceResponseCompraDoVoo<Voucher>> ComprarPassagem(string cpfDoPassageiro, PosuuiDespacho possuiDespacho, int numeroDoVoo);
 
-        Task<ServiceResponseCompraDoVoo<Passageiro>> CadastrarPassageiro(Passageiro passageiro);
+        Task<ServiceResponseCompraDoVoo<PassageiroDto>> CadastrarPassageiro(PassageiroDto passageiro);
 
         Task<ServiceResponseCompraDoVoo<Voucher>> PassagensPeloCPF(string CPF);
 

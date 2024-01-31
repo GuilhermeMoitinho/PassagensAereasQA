@@ -1,5 +1,6 @@
-﻿using Azure;
+﻿using AutoMapper;
 using BackEndAeroQA.Application.Interfaces;
+using BackEndAeroQA.Application.Mapper.Mappings;
 using BackEndAeroQA.Application.ServicoDeResposta;
 using BackEndAeroQA.Domain.Entity;
 using BackEndAeroQA.Domain.Enum;
@@ -14,62 +15,57 @@ namespace BackEndAeroQA.Application.Services
         private readonly DbContextVoo _vooContext;
         private readonly AppDbContextVoucher _voucherContext;
         private readonly AppDbContextBagagem _bagagemContext;
+        private readonly IMapper _mapper;
 
-        public PassageiroService(AppDbContext passageiroContext, DbContextVoo vooContext, AppDbContextVoucher voucherContext, AppDbContextBagagem bagagemContext)
+        public PassageiroService(AppDbContext passageiroContext, DbContextVoo vooContext, AppDbContextVoucher voucherContext, AppDbContextBagagem bagagemContext, IMapper mapper)
         {
             _passageiroContext = passageiroContext;
             _vooContext = vooContext;
             _voucherContext = voucherContext;
             _bagagemContext = bagagemContext;
+            _mapper = mapper;
         }
 
-        public async Task<ServiceResponseCompraDoVoo<Passageiro>> CadastrarPassageiro(Passageiro passageiro)
+        public async Task<ServiceResponseCompraDoVoo<PassageiroDto>> CadastrarPassageiro(PassageiroDto passageiroDto)
         {
-            var response = new ServiceResponseCompraDoVoo<Passageiro>();
+            var response = new ServiceResponseCompraDoVoo<PassageiroDto>();
+            var buscaId = await _passageiroContext.Passageiros.FirstOrDefaultAsync(id => id.Id == passageiroDto.Id);
 
-            var PassageiroExistenteCpf = await _passageiroContext.Passageiros.FirstOrDefaultAsync(cliente => cliente.Cpf == passageiro.Cpf);
+            var passageiro = _mapper.Map<Passageiro>(passageiroDto);
 
-            if(PassageiroExistenteCpf != null)
+            var PassageiroExistenteCpf = await _passageiroContext.Passageiros
+                .FirstOrDefaultAsync(cliente => cliente.Cpf == passageiro.Cpf);
+
+            if (PassageiroExistenteCpf != null)
             {
-                response = new ServiceResponseCompraDoVoo<Passageiro>
+                response = new ServiceResponseCompraDoVoo<PassageiroDto>
                 {
-                    ProcessoConcluido = true,
-                    Dados = PassageiroExistenteCpf,
+                    ProcessoConcluido = false,
+                    Dados = null,
                     Mensagem = "Seu CPF já foi cadastrado!"
                 };
 
                 return response;
             }
 
-            if(passageiro.Id != null)
+            if (buscaId != null)
             {
                 passageiro.Id = Guid.NewGuid();
             }
 
-            if(passageiro == null)
-            {
-                response = new ServiceResponseCompraDoVoo<Passageiro>
-                {
-                    ProcessoConcluido = true,
-                    Dados = null,
-                    Mensagem = "O passageiro não foi adicionando com sucesso!"
-                };
-
-                return response;
-            }
-
-            await _passageiroContext.Passageiros.AddAsync(passageiro);
+            _passageiroContext.Passageiros.Add(passageiro);
             await _passageiroContext.SaveChangesAsync();
 
-            response = new ServiceResponseCompraDoVoo<Passageiro>
+            response = new ServiceResponseCompraDoVoo<PassageiroDto>
             {
                 ProcessoConcluido = true,
-                Dados = passageiro.Id,
-                Mensagem = "Passageiro adicionando com sucesso!"
+                Dados = _mapper.Map<PassageiroDto>(passageiro),
+                Mensagem = "Passageiro adicionado com sucesso!"
             };
 
             return response;
         }
+
         public async Task<ServiceResponseCompraDoVoo<Voucher>> CancelarComprar(string Cpf)
         {
             var response = new ServiceResponseCompraDoVoo<Voucher>();

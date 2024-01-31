@@ -429,3 +429,5 @@ D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\n
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\FluentValidation.dll
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\AutoMapper.dll
+D:\Estudos\HorizonProj\PassagensAereasQA\BackEndAeroQA\BackEndAeroQA\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

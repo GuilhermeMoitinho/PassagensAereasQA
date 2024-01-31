@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ATQQgvtSNCi7BbyFdVttjByXoWjLyeNakFYlPeSVPiNG+hzJ21rToCQQdFfvClu1pGqC0pSYKtm6i/VmbzxYUw==",
+  "dgSpecHash": "ZUnFuIYJUo+ueVf/OOCxMe376wct6VHde5DHS8Al2kk61uVdnM3k5SxvoGg3Pu1uIcRJnwMrBUMadGYTYxn5AA==",
   "success": true,
   "projectFilePath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA\\BackEndAeroQA.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
@@ -17,6 +19,7 @@
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.5.0\\microsoft.codeanalysis.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.5.0\\microsoft.codeanalysis.csharp.workspaces.4.5.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.5.0\\microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.1\\microsoft.entityframeworkcore.8.0.1.nupkg.sha512",

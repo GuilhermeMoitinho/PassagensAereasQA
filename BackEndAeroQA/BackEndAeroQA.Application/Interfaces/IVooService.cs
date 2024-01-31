@@ -1,17 +1,18 @@
-﻿using BackEndAeroQA.Application.ServicoDeResposta;
+﻿using BackEndAeroQA.Application.Mapper.Mappings;
+using BackEndAeroQA.Application.ServicoDeResposta;
 using BackEndAeroQA.Domain.Entity;
 
 namespace BackEndAeroQA.Applicaton.Interfaces
 {
     public interface IVooService
     {
-        Task<ServiceResponseCompraDoVoo<Voo>> CadastrarVoos(Voo voos);
+        Task<ServiceResponseCompraDoVoo<VooDto>> CadastrarVoos(VooDto vooDto);
         Task<ServiceResponseCompraDoVoo<Voo>> ListarVoos(int peginaNumeros, int quantNumeros);
-        Task<ServiceResponseCompraDoVoo<Voo>> BuscarVoo(Guid id);
-        Task AlterarVoo(Voo voor);
+        Task<ServiceResponseCompraDoVoo<VooDto>> BuscarVoo(Guid id);
+        Task AlterarVoo(VooDto vooDto);
         Task CancelarVoo(Guid id);
-        Task<ServiceResponseCompraDoVoo<Voo>> ListarPassageirosEmVooEspecifico(Guid id);
-        Task<ServiceResponseCompraDoVoo<Voo>> ListarVoosEmDataEspecifica(DateTime DataPartidaa, DateTime DataChegada);
+        Task<ServiceResponseCompraDoVoo<VooDto>> ListarPassageirosEmVooEspecifico(Guid id);
+        Task<ServiceResponseCompraDoVoo<VooDto>> ListarVoosEmDataEspecifica(DateTime DataPartidaa, DateTime DataChegada);
 
     }
 }

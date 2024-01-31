@@ -1,4 +1,5 @@
-﻿using BackEndAeroQA.Applicaton.Interfaces;
+﻿using BackEndAeroQA.Application.Mapper.Mappings;
+using BackEndAeroQA.Applicaton.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -61,40 +62,40 @@ namespace BackEndAeroQA.WebAPI.Controllers
 
         [Authorize]
         [HttpPost("cadastro")]
-        public async Task<IActionResult> CadastrarVoos(Voo voo)
+        public async Task<IActionResult> CadastrarVoos(VooDto vooDto)
         {
-            var IdExistente = await _VooService.BuscarVoo(voo.Id);
+            var IdExistente = await _VooService.BuscarVoo(vooDto.Id);
 
 
-            if (voo.DataHoraDePartida.Day > voo.DataHoraDeChegada.Day)
+            if (vooDto.DataHoraDePartida.Day > vooDto.DataHoraDeChegada.Day)
             {
                 return BadRequest();
             }
 
             if (IdExistente != null)
             {
-                voo.Id = Guid.NewGuid();
+                vooDto.Id = Guid.NewGuid();
             }
 
-            var result = await _VooService.CadastrarVoos(voo);
+            var result = await _VooService.CadastrarVoos(vooDto);
 
             return CreatedAtAction(nameof(BuscarVooPorId), new { id = result.Dados }, result);
         }
 
         [Authorize]
         [HttpPut("edite")]
-        public async Task<IActionResult> AlterarVoos(Voo voo)
+        public async Task<IActionResult> AlterarVoos(VooDto vooDto)
         {
-            if (voo == null) return BadRequest();
+            if (vooDto == null) return BadRequest();
 
-            if (voo.DataHoraDePartida.Day > voo.DataHoraDeChegada.Day)
+            if (vooDto.DataHoraDePartida.Day > vooDto.DataHoraDeChegada.Day)
             {
                 return BadRequest();
             }
 
-            if (voo.Id == null) return NotFound();
+            if (vooDto.Id == null) return NotFound();
 
-            await _VooService.AlterarVoo(voo);
+            await _VooService.AlterarVoo(vooDto);
 
             return NoContent();
         }

@@ -1,4 +1,5 @@
 ﻿using BackEndAeroQA.Application.Interfaces;
+using BackEndAeroQA.Application.Mapper.Mappings;
 using BackEndAeroQA.Domain.Entity;
 using BackEndAeroQA.Domain.Enum;
 using Microsoft.AspNetCore.Http;
@@ -26,9 +27,9 @@ namespace BackEndAeroQA.WebAPI.Controllers
 
 
         [HttpPost("cadastrar")]
-        public async Task<IActionResult> CadastrarPassageiro([FromBody]Passageiro passageiro)
+        public async Task<IActionResult> CadastrarPassageiro([FromBody] PassageiroDto passageiroDto)
         {
-            return Ok(await _passageiroService.CadastrarPassageiro(passageiro));
+            return Ok(await _passageiroService.CadastrarPassageiro(passageiroDto));
         }
 
         [HttpGet("passagem/{CPF}")]
