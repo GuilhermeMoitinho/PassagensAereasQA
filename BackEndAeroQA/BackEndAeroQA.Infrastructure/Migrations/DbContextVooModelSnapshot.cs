@@ -38,6 +38,9 @@ namespace BackEndAeroQA.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("NumeroDoVoo")
+                        .HasColumnType("int");
+
                     b.Property<string>("Origem")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

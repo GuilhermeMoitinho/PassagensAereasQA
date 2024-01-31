@@ -1,5 +1,6 @@
 ﻿using BackEndAeroQA.Application.Interfaces;
 using BackEndAeroQA.Domain.Entity;
+using BackEndAeroQA.Domain.Enum;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,5 +16,39 @@ namespace BackEndAeroQA.WebAPI.Controllers
         {
             _passageiroService = passageiroService;
         }
+
+        [HttpPost("comprarpassagem")]
+        public async Task<IActionResult> ComprarPassagem(string
+            cpfDoPassageiro, PosuuiDespacho possuiDespacho, int numeroDoVoo)
+        {
+            return Ok(await _passageiroService.ComprarPassagem(cpfDoPassageiro, possuiDespacho, numeroDoVoo));
+        }
+
+
+        [HttpPost("cadastrar")]
+        public async Task<IActionResult> CadastrarPassageiro([FromBody]Passageiro passageiro)
+        {
+            return Ok(await _passageiroService.CadastrarPassageiro(passageiro));
+        }
+
+        [HttpGet("{CPF}")]
+        public async Task<IActionResult> PassagensPeloCPF(string CPF)
+        {
+            return Ok(await _passageiroService.PassagensPeloCPF(CPF));
+        }
+
+        [HttpDelete("{Cpf}")]
+        public async Task<IActionResult> CancelarPaassagem(string Cpf)
+        {
+            if(Cpf == null)
+            {
+                return NotFound();
+            }
+
+            await _passageiroService.CancelarComprar(Cpf);
+            return NoContent(); 
+        }
+
+
     }
 }

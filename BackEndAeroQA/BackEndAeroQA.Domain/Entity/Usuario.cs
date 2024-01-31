@@ -2,9 +2,8 @@
 
 namespace BackEndAeroQA.Domain.Entity
 {
-    public class Usuario
+    public class Usuario : baseEntity
     {
-        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo de E-mail é obrigatório.")]
         public string Email { get; set; } = string.Empty;

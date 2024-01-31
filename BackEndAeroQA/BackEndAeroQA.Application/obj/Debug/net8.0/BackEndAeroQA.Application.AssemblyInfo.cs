@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackEndAeroQA.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c648a608aa196d6fb9a8fbf96dc5437cd87507f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaf8ad9dbb8d401efe49163c4e9f053375d3f875")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackEndAeroQA.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackEndAeroQA.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

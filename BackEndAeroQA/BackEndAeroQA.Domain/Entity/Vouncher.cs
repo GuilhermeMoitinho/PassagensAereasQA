@@ -1,12 +1,19 @@
-﻿namespace BackEndAeroQA.Domain.Entity
+﻿using BackEndAeroQA.Domain.Enum;
+
+namespace BackEndAeroQA.Domain.Entity
 {
-    public class Vouncher 
+    public class Voucher : baseEntity
     {
-        public int NumeroPassagem { get; set; }
         public int NumeroVoo { get; set; }
         public string Origem { get; set; }
         public string Destino { get; set; }
         public string NomePassageiro { get; set; }
-        public bool PossuiDespachoBagagem { get; set; }
+        public string CpfPassageiro { get; set; }
+        public PosuuiDespacho PossuiDespachoBagagem { get; set; }
+
+        public Voucher()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

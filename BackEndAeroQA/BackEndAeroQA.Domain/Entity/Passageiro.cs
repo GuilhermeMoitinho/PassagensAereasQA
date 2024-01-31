@@ -4,11 +4,11 @@ using System.Globalization;
 
 namespace BackEndAeroQA.Domain.Entity
 {
-    public class Passageiro
+    public class Passageiro : baseEntity
     {
-        public Guid Id { get; set; }
         public string Cpf { get; set; }
         public string Name { get; set; }
+        public List<string> VoosComprados { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public string Email { get; set; }
 

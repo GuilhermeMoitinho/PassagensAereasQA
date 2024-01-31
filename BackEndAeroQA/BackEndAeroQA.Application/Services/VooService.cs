@@ -9,32 +9,27 @@ namespace BackEndAeroQA.Application.Services
     public class VooService : IVooService
     {
         private readonly DbContextVoo _contextVoo;
-        private readonly AppDbContext _passageiroContext;
 
-        public VooService(DbContextVoo contextVoo, AppDbContext passageiroContext)
+        public VooService(DbContextVoo contextVoo)
         {
             _contextVoo = contextVoo;
-            _passageiroContext = passageiroContext;
         }
 
         public async Task AlterarVoo(Voo voor)
         {
-            var vooExistente = _contextVoo.Voos.AsNoTracking().FirstOrDefault(v => v.Id == voor.Id);
+            var VooExistente = await _contextVoo.Voos.FindAsync(voor.Id);
 
-            if (vooExistente != null)
-            {
-                vooExistente.Origem = voor.Origem;
-                vooExistente.Destino = voor.Destino;
-                vooExistente.DataHoraDePartida = voor.DataHoraDePartida;
-                vooExistente.DataHoraDeChegada = voor.DataHoraDeChegada;
-                vooExistente.Tipo = voor.Tipo;
-                vooExistente.QuantidadeDosAssentos = voor.QuantidadeDosAssentos;
-                vooExistente.Passageiros = voor.Passageiros;
-                vooExistente.ValorDoAssento = voor.ValorDoAssento;
+            VooExistente.Origem = voor.Origem;
+            VooExistente.Destino = voor.Destino;
+            VooExistente.DataHoraDePartida = voor.DataHoraDePartida;
+            VooExistente.DataHoraDeChegada = voor.DataHoraDeChegada;
+            VooExistente.Tipo = voor.Tipo;
+            VooExistente.QuantidadeDosAssentos = voor.QuantidadeDosAssentos;
+            VooExistente.Passageiros = voor.Passageiros;
+            VooExistente.ValorDoAssento = voor.ValorDoAssento;
 
-                _contextVoo.Voos.Update(vooExistente);
-                await _contextVoo.SaveChangesAsync();
-            }
+             _contextVoo.Voos.Update(VooExistente);
+            await _contextVoo.SaveChangesAsync();
         }
 
         public async Task<ServiceResponseCompraDoVoo<Voo>> BuscarVoo(Guid id)
@@ -63,7 +58,6 @@ namespace BackEndAeroQA.Application.Services
                     Dados = null,
                     Mensagem = "Verifique suas credenciais!"
                 };
-
                 return response;
             }
 

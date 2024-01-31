@@ -25,6 +25,11 @@ namespace BackEndAeroQA.WebAPI.Controllers
         [HttpGet("voo/{DataPartidaa}/{DataChegada}")]
         public async Task<IActionResult> ListarVoosEmDataEspecifica(DateTime DataPartidaa, DateTime DataChegada)
         {
+            if(DataPartidaa.Day > DataChegada.Day)
+            {
+                return BadRequest();
+            }
+
             return Ok(await _VooService.ListarVoosEmDataEspecifica(DataPartidaa, DataChegada));
         }
 
@@ -54,6 +59,12 @@ namespace BackEndAeroQA.WebAPI.Controllers
         {
             var IdExistente = await _VooService.BuscarVoo(voo.Id);
 
+
+            if (voo.DataHoraDePartida.Day > voo.DataHoraDeChegada.Day)
+            {
+                return BadRequest();
+            }
+
             if (IdExistente != null)
             {
                 voo.Id = Guid.NewGuid();
@@ -68,6 +79,11 @@ namespace BackEndAeroQA.WebAPI.Controllers
         public async Task<IActionResult> AlterarVoos(Voo voo)
         {
             if (voo == null) return BadRequest();
+
+            if (voo.DataHoraDePartida.Day > voo.DataHoraDeChegada.Day)
+            {
+                return BadRequest();
+            }
 
             if (voo.Id == null) return NotFound();
 

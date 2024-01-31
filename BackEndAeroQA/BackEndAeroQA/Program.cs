@@ -22,6 +22,14 @@ builder.Services.AddDbContext<DbContextAeroporto>
 builder.Services.AddDbContext<DbContextVoo>
         (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
+builder.Services.AddDbContext<AppDbContextVoucher>
+        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
+builder.Services.AddDbContext<AppDbContextBagagem>
+        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
+
+
 builder.Services.AddScoped<IVooService, VooService>();
 builder.Services.AddScoped<IAeroportoService, AeroportoService>();
 builder.Services.AddScoped<IPassageiroService, PassageiroService>();
@@ -89,6 +97,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(x => x
+           .AllowAnyOrigin() 
+           .AllowAnyMethod() 
+           .AllowAnyHeader()) 
+           .UseAuthentication();
 
 app.UseAuthorization();
 
