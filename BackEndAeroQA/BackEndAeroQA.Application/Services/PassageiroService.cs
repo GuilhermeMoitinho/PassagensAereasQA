@@ -12,12 +12,14 @@ namespace BackEndAeroQA.Application.Services
         private readonly AppDbContext _passageiroContext;
         private readonly DbContextVoo _vooContext;
         private readonly AppDbContextVoucher _voucherContext;
+        private readonly AppDbContextBagagem _bagagemContext;
 
-        public PassageiroService(AppDbContext passageiroContext, DbContextVoo vooContext, AppDbContextVoucher voucherContext)
+        public PassageiroService(AppDbContext passageiroContext, DbContextVoo vooContext, AppDbContextVoucher voucherContext, AppDbContextBagagem bagagemContext)
         {
             _passageiroContext = passageiroContext;
             _vooContext = vooContext;
             _voucherContext = voucherContext;
+            _bagagemContext = bagagemContext;
         }
 
         public async Task<ServiceResponseCompraDoVoo<Passageiro>> CadastrarPassageiro(Passageiro passageiro)
@@ -114,9 +116,38 @@ namespace BackEndAeroQA.Application.Services
             return response;
         }
 
-        public Task<ServiceResponseCompraDoVoo<Bagagem>> EmitirBagagem(string cpf)
+        public async Task<ServiceResponseCompraDoVoo<Bagagem>> EmitirBagagem(string cpf, bool extraviada, double pesoBagagem)
         {
-            throw new NotImplementedException();
+            var response = new ServiceResponseCompraDoVoo<Bagagem>();
+            var ProcurarVoucher = await _voucherContext.Vouchers.FirstOrDefaultAsync(CPF => CPF.CpfPassageiro == cpf);
+            var Bagagem = new Bagagem();
+
+            Bagagem.Descricao = "Origem: " + ProcurarVoucher.Origem + " e Destino: " + ProcurarVoucher.Destino;
+            Bagagem.CpfPassageiro = ProcurarVoucher.CpfPassageiro;
+            Bagagem.Extraviada = extraviada;
+            Bagagem.Peso = pesoBagagem;
+
+            if(ProcurarVoucher == null)
+            {
+                response = new ServiceResponseCompraDoVoo<Bagagem>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Verifique suas credenciais!"
+                };
+            }
+
+            await _bagagemContext.Bagagens.AddAsync(Bagagem);
+            await _bagagemContext.SaveChangesAsync();
+
+            response = new ServiceResponseCompraDoVoo<Bagagem>
+            {
+                ProcessoConcluido = true,
+                Dados = Bagagem,
+                Mensagem = "Etiqueta da Bagagem emitida com sucesso!"
+            };
+
+            return response;
         }
 
         public async Task<ServiceResponseCompraDoVoo<Voucher>> PassagensPeloCPF(string CPF)

@@ -37,6 +37,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return Ok(await _passageiroService.PassagensPeloCPF(CPF));
         }
 
+
         [HttpDelete("{Cpf}")]
         public async Task<IActionResult> CancelarPaassagem(string Cpf)
         {
@@ -47,6 +48,17 @@ namespace BackEndAeroQA.WebAPI.Controllers
 
             await _passageiroService.CancelarComprar(Cpf);
             return NoContent(); 
+        }
+
+        [HttpPost("bagagem")]
+        public async Task<IActionResult> EmitirBagagem(string cpf, bool extraviada, double pesoBagagem)
+        {
+            if (cpf == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(await _passageiroService.EmitirBagagem(cpf, extraviada, pesoBagagem));
         }
 
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaf8ad9dbb8d401efe49163c4e9f053375d3f875")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80219ad44131e8d9dce1b9a220373cf9afbefda8")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

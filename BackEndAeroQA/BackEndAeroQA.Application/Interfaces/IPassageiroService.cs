@@ -14,6 +14,7 @@ namespace BackEndAeroQA.Application.Interfaces
 
         Task CancelarComprar(string cpf);
 
-        Task<ServiceResponseCompraDoVoo<Bagagem>> EmitirBagagem(string cpf);
+        Task<ServiceResponseCompraDoVoo<Bagagem>> EmitirBagagem(string cpf, bool extraviada, double pesoBagagem);
+
     }
 }
