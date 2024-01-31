@@ -24,9 +24,4 @@
     <ProjectReference Include="..\BackEndAeroQA.Infrastructure\BackEndAeroQA.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="IoC\" />
-    <Folder Include="Configuracoes\" />
-  </ItemGroup>
-
 </Project>

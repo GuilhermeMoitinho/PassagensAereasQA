@@ -3,6 +3,8 @@ using BackEndAeroQA.Application.Interfaces;
 using BackEndAeroQA.Application.Services;
 using BackEndAeroQA.Applicaton.Interfaces;
 using BackEndAeroQA.Infrastructure.Context;
+using BackEndAeroQA.WebAPI.Configuracoes;
+using BackEndAeroQA.WebAPI.IoC;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -14,85 +16,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<AppDbContext>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-builder.Services.AddDbContext<DbContextAeroporto>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-builder.Services.AddDbContext<DbContextVoo>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-builder.Services.AddDbContext<AppDbContextVoucher>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-builder.Services.AddDbContext<AppDbContextBagagem>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-builder.Services.AddDbContext<AppDbContextUsuario>
-        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
-
-
-
-builder.Services.AddScoped<IVooService, VooService>();
-builder.Services.AddScoped<IAeroportoService, AeroportoService>();
-builder.Services.AddScoped<IPassageiroService, PassageiroService>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-builder.Services.AddScoped<TokenService>();
 
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddRegisteredServices(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = JwtBearerDefaults.AuthenticationScheme,
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Autoriza��o JWT (header) usando Bearer. \r\n\r\n Digite 'Bearer' [espa�o] e o token em seguida.\r\n\r\nExemplo: \"Bearer c76n21m890edf2i9mci\"",
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        Array.Empty<string>()
-                    }
-                });
-
-
-});
-
-var key = Encoding.ASCII.GetBytes(Settings.Key);
-
-    builder.Services.AddAuthentication(x =>
-    {
-        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    }).AddJwtBearer(x =>
-    {
-        x.RequireHttpsMetadata = false;
-        x.SaveToken = true;
-        x.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuer = false,
-            ValidateAudience = false
-        };
-    });
+builder.Services.AddAuthanticationJwt();
+builder.Services.AddSwagger();
 
 var app = builder.Build();
 

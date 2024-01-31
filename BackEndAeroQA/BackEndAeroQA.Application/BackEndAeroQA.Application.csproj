@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Folder Include="Mapper\" />
+    <Folder Include="Validacoes\" />
   </ItemGroup>
 
 </Project>
