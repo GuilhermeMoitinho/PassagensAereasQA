@@ -4,6 +4,7 @@ using BackEndAeroQA.Application.Services;
 using BackEndAeroQA.Applicaton.Interfaces;
 using BackEndAeroQA.Infrastructure.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Hosting.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -28,11 +29,17 @@ builder.Services.AddDbContext<AppDbContextVoucher>
 builder.Services.AddDbContext<AppDbContextBagagem>
         (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
+builder.Services.AddDbContext<AppDbContextUsuario>
+        (op => op.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
 
 
 builder.Services.AddScoped<IVooService, VooService>();
 builder.Services.AddScoped<IAeroportoService, AeroportoService>();
 builder.Services.AddScoped<IPassageiroService, PassageiroService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<TokenService>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -99,10 +106,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(x => x
-           .AllowAnyOrigin() 
-           .AllowAnyMethod() 
-           .AllowAnyHeader()) 
-           .UseAuthentication();
+             .AllowAnyOrigin() 
+             .AllowAnyMethod() 
+             .AllowAnyHeader()) 
+             .UseAuthentication();
+
 
 app.UseAuthorization();
 

@@ -1,10 +1,11 @@
 ﻿using BackEndAeroQA.Applicaton.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEndAeroQA.WebAPI.Controllers
 {
-    [Route("api/v1/voos")]
+    [Route("api/v1/voo")]
     [ApiController]
     public class VooController : ControllerBase
     {
@@ -16,6 +17,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             _VooService = vooService;
         }
 
+        [Authorize]
         [HttpGet("voos")]
         public async Task<IActionResult> ListarVoos(int peginaNumeros = 0, int quantNumeros = 30)
         {
@@ -33,6 +35,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return Ok(await _VooService.ListarVoosEmDataEspecifica(DataPartidaa, DataChegada));
         }
 
+        [Authorize]
         [HttpDelete("cancelar")]
         public async Task<IActionResult> CancelarVoo(Guid id)
         {
@@ -48,12 +51,14 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return Ok(await _VooService.BuscarVoo(id));
         }
 
+        [Authorize]
         [HttpGet("voo/{id}/passageiros")]
         public async Task<IActionResult> BuscarVoListarPassageirosEmVooEspecificooPorId(Guid id)
         {
             return Ok(await _VooService.ListarPassageirosEmVooEspecifico(id));
         }
 
+        [Authorize]
         [HttpPost("cadastro")]
         public async Task<IActionResult> CadastrarVoos(Voo voo)
         {
@@ -75,6 +80,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return CreatedAtAction(nameof(BuscarVooPorId), new { id = result.Dados }, result);
         }
 
+        [Authorize]
         [HttpPut("edite")]
         public async Task<IActionResult> AlterarVoos(Voo voo)
         {

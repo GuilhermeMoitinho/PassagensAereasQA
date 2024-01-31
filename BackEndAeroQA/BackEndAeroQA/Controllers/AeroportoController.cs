@@ -1,10 +1,11 @@
 ﻿using BackEndAeroQA.Application.Interfaces;
 using BackEndAeroQA.Applicaton.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEndAeroQA.WebAPI.Controllers
 {
-    [Route("api/v1/aeroportos")]
+    [Route("api/v1/aeroporto")]
     [ApiController]
     public class AeroportoController : ControllerBase
     {
@@ -15,6 +16,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             _AeroportoService = aeroportoService;
         }
 
+        [Authorize]
         [HttpGet("aeroportos")]
         public async Task<IActionResult> ListarAeroportos(int peginaNumero = 0, int quantNumeros = 20)
         {
