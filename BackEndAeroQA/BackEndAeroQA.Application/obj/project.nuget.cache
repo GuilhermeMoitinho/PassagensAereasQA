@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ycloT7sAHKhluzoeiJy2B34yKsGG9ynKZyqyN84RANzp8Xs0ml9xujzGMWmAYfEkqmG2r+teqOgT1SIASrUSUw==",
+  "dgSpecHash": "ByREJvNXIicdsrnGFOB5gVKzwZ6hmPno3ZJYac/DtH+8ipv0wtTRviYcRE+MOuu6VzRl5y+7ZswJpuj2B3bUng==",
   "success": true,
   "projectFilePath": "D:\\Estudos\\HorizonProj\\PassagensAereasQA\\BackEndAeroQA\\BackEndAeroQA.Application\\BackEndAeroQA.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.1\\microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Guilherme Moitinho\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

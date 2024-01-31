@@ -44,6 +44,7 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [ActionName("BuscarVooPorId")]
         [HttpGet("voo/{id}")]
         public async Task<IActionResult> BuscarVooPorId(Guid id)

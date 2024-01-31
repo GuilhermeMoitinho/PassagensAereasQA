@@ -13,11 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Validacoes\VooValidacao.cs~RF534a99b1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BackEndAeroQA.Domain\BackEndAeroQA.Domain.csproj" />
     <ProjectReference Include="..\BackEndAeroQA.Infrastructure\BackEndAeroQA.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.2.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.2.0" />
@@ -25,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Mapper\" />
-    <Folder Include="Validacoes\" />
   </ItemGroup>
 
 </Project>

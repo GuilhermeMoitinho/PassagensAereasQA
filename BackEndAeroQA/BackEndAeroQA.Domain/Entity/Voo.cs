@@ -7,8 +7,7 @@ public class Voo : baseEntity
 {
     public string Origem { get; set; }
     public string Destino { get; set; }
-    [Column("NumeroDoVoo")]
-    public int CodigoIATA { get; set; }
+    public int NumeroDoVoo { get; set; }
     public DateTime DataHoraDePartida { get; set; } = DateTime.ParseExact("2016-05-08", "yyyy-MM-dd", CultureInfo.InvariantCulture);
     public DateTime DataHoraDeChegada { get; set; } = DateTime.ParseExact("2016-05-08", "yyyy-MM-dd", CultureInfo.InvariantCulture);
     public TipoDeClasses Tipo { get; set; }

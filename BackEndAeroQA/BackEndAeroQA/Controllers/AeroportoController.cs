@@ -16,7 +16,6 @@ namespace BackEndAeroQA.WebAPI.Controllers
             _AeroportoService = aeroportoService;
         }
 
-        [Authorize]
         [HttpGet("aeroportos")]
         public async Task<IActionResult> ListarAeroportos(int peginaNumero = 0, int quantNumeros = 20)
         {

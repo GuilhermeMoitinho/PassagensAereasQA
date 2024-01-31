@@ -1,4 +1,5 @@
-﻿using BackEndAeroQA.Application.Interfaces;
+﻿using Azure;
+using BackEndAeroQA.Application.Interfaces;
 using BackEndAeroQA.Application.ServicoDeResposta;
 using BackEndAeroQA.Domain.Entity;
 using BackEndAeroQA.Domain.Enum;
@@ -26,6 +27,20 @@ namespace BackEndAeroQA.Application.Services
         {
             var response = new ServiceResponseCompraDoVoo<Passageiro>();
 
+            var PassageiroExistenteCpf = await _passageiroContext.Passageiros.FirstOrDefaultAsync(cliente => cliente.Cpf == passageiro.Cpf);
+
+            if(PassageiroExistenteCpf != null)
+            {
+                response = new ServiceResponseCompraDoVoo<Passageiro>
+                {
+                    ProcessoConcluido = true,
+                    Dados = PassageiroExistenteCpf,
+                    Mensagem = "Seu CPF já foi cadastrado!"
+                };
+
+                return response;
+            }
+
             if(passageiro.Id != null)
             {
                 passageiro.Id = Guid.NewGuid();
@@ -39,6 +54,8 @@ namespace BackEndAeroQA.Application.Services
                     Dados = null,
                     Mensagem = "O passageiro não foi adicionando com sucesso!"
                 };
+
+                return response;
             }
 
             await _passageiroContext.Passageiros.AddAsync(passageiro);
@@ -53,15 +70,34 @@ namespace BackEndAeroQA.Application.Services
 
             return response;
         }
-        public async Task CancelarComprar(string Cpf)
+        public async Task<ServiceResponseCompraDoVoo<Voucher>> CancelarComprar(string Cpf)
         {
+            var response = new ServiceResponseCompraDoVoo<Voucher>();
             var PassagensExistentes = await _voucherContext.Vouchers.FirstOrDefaultAsync(voucher => voucher.CpfPassageiro == Cpf);
 
-            if (PassagensExistentes != null)
+            if(PassagensExistentes == null)
             {
-                _voucherContext.Vouchers.Remove(PassagensExistentes);
-                await _voucherContext.SaveChangesAsync();
+                response = new ServiceResponseCompraDoVoo<Voucher>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Esse Cpf é inválido!"
+                };
+
+                return response;
             }
+
+            _voucherContext.Vouchers.Remove(PassagensExistentes);
+            await _voucherContext.SaveChangesAsync();
+
+            response = new ServiceResponseCompraDoVoo<Voucher>
+            {
+                ProcessoConcluido = true,
+                Dados = Cpf,
+                Mensagem = "Dados removidos com sucesso!"
+            };
+
+            return response;
         }
 
         public async Task<ServiceResponseCompraDoVoo<Voucher>> ComprarPassagem(string cpfDoPassageiro, PosuuiDespacho possuiDespacho, int numeroDoVoo)
@@ -70,10 +106,10 @@ namespace BackEndAeroQA.Application.Services
 
             var voucherDeRetorno = new Voucher();
 
-            var passageiroExistente = await _passageiroContext.Passageiros.FirstOrDefaultAsync(cpf => cpf.Cpf == cpfDoPassageiro);
+            var passageiroExistente = await _passageiroContext.Passageiros.FirstOrDefaultAsync(cpf => cpf.Cpf == cpfDoPassageiro);  
 
             var VooEspecifico = await _vooContext.Voos
-                .FirstOrDefaultAsync(NumeroDoVoo => NumeroDoVoo.CodigoIATA == numeroDoVoo);
+                .FirstOrDefaultAsync(NumeroDoVoo => NumeroDoVoo.NumeroDoVoo == numeroDoVoo);
 
             if (passageiroExistente == null || VooEspecifico == null)
             {
@@ -88,7 +124,7 @@ namespace BackEndAeroQA.Application.Services
             }
 
             // Adicionando ao voucher
-            voucherDeRetorno.NumeroVoo = VooEspecifico.CodigoIATA;
+            voucherDeRetorno.NumeroVoo = VooEspecifico.NumeroDoVoo;
             voucherDeRetorno.PossuiDespachoBagagem = possuiDespacho;
             voucherDeRetorno.Origem = VooEspecifico.Origem;
             voucherDeRetorno.Destino = VooEspecifico.Destino;
@@ -110,7 +146,7 @@ namespace BackEndAeroQA.Application.Services
             {
                 ProcessoConcluido = true,
                 Dados = voucherDeRetorno,
-                Mensagem = "Passagem comprada com sucesso."
+                Mensagem = $"Passagem comprada com sucesso, {passageiroExistente.Name}"
             };
 
             return response;
@@ -121,6 +157,20 @@ namespace BackEndAeroQA.Application.Services
             var response = new ServiceResponseCompraDoVoo<Bagagem>();
             var ProcurarVoucher = await _voucherContext.Vouchers.FirstOrDefaultAsync(CPF => CPF.CpfPassageiro == cpf);
             var Bagagem = new Bagagem();
+
+            var PassageiroTemPassagem = await PassagensPeloCPF(cpf);
+
+            if(PassageiroTemPassagem.Dados == null)
+            {
+                response = new ServiceResponseCompraDoVoo<Bagagem>
+                {
+                    ProcessoConcluido = true,
+                    Dados = null,
+                    Mensagem = "Seu passageiro não tem bagagem!"
+                };
+
+                return response;
+            }
 
             Bagagem.Descricao = "Origem: " + ProcurarVoucher.Origem + " e Destino: " + ProcurarVoucher.Destino;
             Bagagem.CpfPassageiro = ProcurarVoucher.CpfPassageiro;
@@ -135,6 +185,8 @@ namespace BackEndAeroQA.Application.Services
                     Dados = null,
                     Mensagem = "Verifique suas credenciais!"
                 };
+
+                return response;
             }
 
             await _bagagemContext.Bagagens.AddAsync(Bagagem);
@@ -164,6 +216,8 @@ namespace BackEndAeroQA.Application.Services
                     Dados = null,
                     Mensagem = "Nenhuma passagem encontrada."
                 };
+
+                return response;
             }
 
             response = new ServiceResponseCompraDoVoo<Voucher>

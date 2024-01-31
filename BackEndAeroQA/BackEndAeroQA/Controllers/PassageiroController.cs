@@ -31,15 +31,15 @@ namespace BackEndAeroQA.WebAPI.Controllers
             return Ok(await _passageiroService.CadastrarPassageiro(passageiro));
         }
 
-        [HttpGet("{CPF}")]
+        [HttpGet("passagem/{CPF}")]
         public async Task<IActionResult> PassagensPeloCPF(string CPF)
         {
             return Ok(await _passageiroService.PassagensPeloCPF(CPF));
         }
 
 
-        [HttpDelete("{Cpf}")]
-        public async Task<IActionResult> CancelarPaassagem(string Cpf)
+        [HttpDelete("passagem/{Cpf}")]
+        public async Task<IActionResult> CancelarPassagem(string Cpf)
         {
             if(Cpf == null)
             {
