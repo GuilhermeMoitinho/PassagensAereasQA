@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("0a613f30-4f4d-479e-8059-ba8b3402eeed")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80219ad44131e8d9dce1b9a220373cf9afbefda8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+527a9b8f74b34697825c97d6f2a7fc9bb92ea9fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackEndAeroQA.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
