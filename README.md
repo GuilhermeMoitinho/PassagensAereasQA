@@ -26,6 +26,8 @@ Desafio HORIZON. Bem-vindo à documentação da API BackEndAeroQA, uma solução
 ## Estrutura da Aplicação
 A aplicação é estruturada em torno de controladores, cada um responsável por funcionalidades específicas.
 
+A URL base da API é: `https://backendaeroqawebapiapi.azure-api.net`
+
 ### AeroportoController
 - **Endpoint:** `/api/v1/aeroporto/aeroportos`
   - **Método:** `GET`
