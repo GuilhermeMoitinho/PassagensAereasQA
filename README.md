@@ -22,72 +22,27 @@ Desafio HORIZON. Bem-vindo à documentação da API BackEndAeroQA, uma solução
 
 - **Manuseio de Bagagem:**
   - Emitir etiquetas de bagagem, incluindo autenticação JWT.
+  
+- **Docker:**
+  - O projeto inclui um Dockerfile para facilitar a execução da aplicação via Docker.
 
 ## Estrutura da Aplicação
 A aplicação é estruturada em torno de controladores, cada um responsável por funcionalidades específicas.
 
 A URL base da API é: `https://backendaeroqawebapiapi.azure-api.net`
 
-### AeroportoController
-- **Endpoint:** `/api/v1/aeroporto/aeroportos`
-  - **Método:** `GET`
-  - **Descrição:** Listar aeroportos disponíveis.
-
-### PassageiroController
-- **Endpoints:**
-  - `/api/v1/passageiro/comprarpassagem`
-    - **Método:** `POST`
-    - **Descrição:** Comprar uma passagem.
-  - `/api/v1/passageiro/cadastrar`
-    - **Método:** `POST`
-    - **Descrição:** Cadastrar um passageiro.
-  - `/api/v1/passageiro/passagem/{CPF}`
-    - **Método:** `GET`
-    - **Descrição:** Recuperar passagens compradas pelo CPF.
-  - `/api/v1/passageiro/passagem/{Cpf}`
-    - **Método:** `DELETE`
-    - **Descrição:** Cancelar a compra de passagens.
-  - `/api/v1/passageiro/bagagem`
-    - **Método:** `POST`
-    - **Descrição:** Emitir etiqueta de bagagem.
-
-### UsuarioController
-- **Endpoint:** `/api/usuario/login`
-  - **Método:** `POST`
-  - **Descrição:** Login do usuário.
-
-### VooController
-- **Endpoints:**
-  - `/api/v1/voo/voos`
-    - **Método:** `GET`
-    - **Descrição:** Listar voos disponíveis.
-  - `/api/v1/voo/voo/{DataPartidaa}/{DataChegada}`
-    - **Método:** `GET`
-    - **Descrição:** Listar voos dentro de um intervalo de datas específico.
-  - `/api/v1/voo/cancelar`
-    - **Método:** `DELETE`
-    - **Descrição:** Cancelar um voo.
-  - `/api/v1/voo/voo/{id}`
-    - **Método:** `GET`
-    - **Descrição:** Recuperar detalhes do voo por ID.
-  - `/api/v1/voo/voo/{id}/passageiros`
-    - **Método:** `GET`
-    - **Descrição:** Listar passageiros em um voo específico.
-  - `/api/v1/voo/cadastro`
-    - **Método:** `POST`
-    - **Descrição:** Cadastrar um novo voo.
-  - `/api/v1/voo/edite`
-    - **Método:** `PUT`
-    - **Descrição:** Atualizar detalhes do voo.
-
 ## Tecnologias Utilizadas
 - **Autenticação:** JWT
 - **Validação de Dados:** FluentValidation
 - **Mapeamento de Dados:** AutoMapper
 - **Hospedagem na Nuvem:** Azure
+- **Docker:** Inclui suporte para execução via Docker.
+- **Melhorias Planejadas:**
+  - Avaliação e ajuste dos nomes das rotas para maior clareza e consistência.
+  - Revisão e possível otimização de algumas lógicas de código.
 
-## Como Começar
-Para começar com a API BackEndAeroQA, siga as etapas delineadas no [Guia de Início Rápido](link-para-o-seu-guia).
+## Deploy
+Fiquei em dúvida entre fazer o deploy no Heroku e no Azure. No Heroku, consideraria o deploy via Docker, já que eu adicionei um Dockerfile. No entanto, optei pela praticidade do Azure diretamente do Visual Studio para a publicação da API.
 
 ## Notas Importantes
 - O banco de dados e a API estão hospedados na nuvem com acesso público.
