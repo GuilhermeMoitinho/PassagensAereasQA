@@ -40,6 +40,7 @@ A URL base da API é: `https://backendaeroqawebapiapi.azure-api.net`
 - **Melhorias Planejadas:**
   - Avaliação e ajuste dos nomes das rotas para maior clareza e consistência.
   - Revisão e possível otimização de algumas lógicas de código.
+  - Pretendo ainda implementar testes unitários com xUnit.
 
 ## Deploy
 Fiquei em dúvida entre fazer o deploy no Heroku e no Azure. No Heroku, consideraria o deploy via Docker, já que eu adicionei um Dockerfile. No entanto, optei pela praticidade do Azure diretamente do Visual Studio para a publicação da API.
